@@ -40,12 +40,7 @@ const items = {
         {name: "Monster Tooth", sotv: false, sots: false, image: "itemsWhite/Monster_Tooth.webp"},
         {name: "Oddly-shaped Opal", sotv: true, sots: false, image: "itemsWhite/Oddly-shaped_Opal.webp"},
         {name: "Paul's Goat Hoof", sotv: false, sots: false, image: "itemsWhite/Paul's_Goat_Hoof.webp"},
-        {
-            name: "Personal Shield Generator",
-            sotv: false,
-            sots: false,
-            image: "itemsWhite/Personal_Shield_Generator.webp"
-        },
+        {name: "Personal Shield Generator", sotv: false, sots: false, image: "itemsWhite/Personal_Shield_Generator.webp"},
         {name: "Power Elixir", sotv: true, sots: false, image: "itemsWhite/Power_Elixir.webp"},
         {name: "Repulsion Armor Plate", sotv: false, sots: false, image: "itemsWhite/Repulsion_Armor_Plate.webp"},
         {name: "Roll of Pennies", sotv: true, sots: false, image: "itemsWhite/Roll_of_Pennies.webp"},
