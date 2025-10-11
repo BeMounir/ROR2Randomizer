@@ -1,7 +1,8 @@
 const images = [
-    'backgrounds/Rallypoint Delta.jpg',
-    'backgrounds/Siphoned Forest.webp',
-    'backgrounds/Sundered Grove.jpg',
+    'backgrounds/Rallypoint_Delta.jpg',
+    'backgrounds/Siphoned_Forest.webp',
+    'backgrounds/Sundered_Grove.jpg',
+    'backgrounds/Treeborn_Colony.jpg'
 ];
 
 const randomImage = images[Math.floor(Math.random() * images.length)];
