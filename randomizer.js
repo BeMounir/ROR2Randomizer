@@ -276,8 +276,9 @@ function getRandomItem() {
     });
 
     if (filtered.length === 0) {
-        result.innerText = "No items match the active filters!";
+        result.innerText = "Ofcourse there won't be any items if you deselect SOTV.";
         image.style.display = "none";
+        result.classList.add("show");
         return;
     }
 
@@ -285,11 +286,19 @@ function getRandomItem() {
     result.innerText = random.name;
 
     if (random.image) {
+        image.classList.remove("show");
         image.src = random.image;
         image.style.display = "block";
+        setTimeout(() => image.classList.add("show"), 5);
     } else {
         image.style.display = "none";
     }
+
+    result.classList.remove("show");
+
+    setTimeout(() => {
+        result.classList.add("show");
+    }, 50);
 
     const color = categoryColors[category] || "#ffcc00";
     result.style.color = color;
