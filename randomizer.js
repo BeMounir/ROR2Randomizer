@@ -277,6 +277,19 @@ const categoryColors = {
 const historyList = document.getElementById("historyList");
 const maxHistory = 10;
 
+function preloadImages() {
+    for (const i in items) {
+        items[i].forEach(item => {
+            if (item.image) {
+                const img = new Image();
+                img.src = item.image;
+            }
+        });
+    }
+}
+
+window.addEventListener('load', preloadImages);
+
 function getRandomItem() {
     const category = document.getElementById('categorySelect').value;
     const sotvActive = document.getElementById('sotvFilter').classList.contains('selected');
