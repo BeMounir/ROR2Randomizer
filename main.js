@@ -30,6 +30,7 @@ function preloadAllImages() {
             }
         });
     }
+    console.log("Finished preloading images.")
 }
 
 window.addEventListener('load', preloadAllImages);
