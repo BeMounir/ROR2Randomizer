@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random ROR2 Item Generator</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <link rel="icon" type="src/image/png" href="itemsWhite/Tougher_Times.webp">
+    <link rel="icon" type="src/image/png" href="images/itemsWhite/Tougher_Times.webp">
 </head>
 <body>
 <div class="container">
@@ -13,6 +13,7 @@
 
     <select id="categorySelect">
         <option value="survivors">Survivors</option>
+        <option value="artifacts">Artifacts</option>
         <option value="white">White</option>
         <option value="green">Green</option>
         <option value="red">Red</option>
@@ -28,17 +29,18 @@
     </select>
 
     <div class="buttons">
-        <button onclick="getRandomItem()">Get Random Item</button>
+        <button class="roll" onclick="getRandomItem()">Get Random Item</button>
         <button class="icon-btn toggle-btn selected" id="sotvFilter" title="SOTV">
-            <img src="icons/SotV_Icon.webp" alt="SOTV">
+            <img src="images/icons/SotV_Icon.webp" alt="SOTV">
         </button>
         <button class="icon-btn toggle-btn selected" id="sotsFilter" title="SOTS">
-            <img src="icons/SotS_Icon.webp" alt="SOTS">
+            <img src="images/icons/SotS_Icon.webp" alt="SOTS">
         </button>
     </div>
 
     <div id="result"></div>
     <img id="itemImage">
+    <p id="description"></p>
 
     <div id="historyContainer">
         <h2>Roll History</h2>
@@ -52,5 +54,6 @@
 
 <script src="randomizer.js"></script>
 <script src="background.js"></script>
+
 </body>
 </html>

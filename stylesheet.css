@@ -1,5 +1,10 @@
+@font-face {
+    font-family: Bombardier;
+    src: url('fonts/Bombardier-Regular.ttf') format('truetype');
+}
+
 body {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Bombardier', sans-serif;
     background: radial-gradient(circle at top, #0a0a0a, #1b1b1b);
     color: #ffffff;
     text-align: center;
@@ -16,7 +21,7 @@ body {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #ffffff;
     margin-bottom: 30px;
 }
@@ -36,32 +41,37 @@ select {
 button {
     padding: 12px 25px;
     margin: 10px;
-    font-size: 16px;
+    font-family: Bombardier, serif;
+    font-size: 20px;
     font-weight: bold;
-    color: #0a0a0a;
-    background: linear-gradient(135deg, #ffffff, #ffffff);
-    border: none;
-    border-radius: 10px;
+    color: #ffffff;
+    background: #505B71;
+    opacity: 0.8;
+    border-radius: 2px;
     cursor: pointer;
     text-transform: uppercase;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
     transition: all 0.2s ease;
 }
 
-button:hover {
+.roll {
+    border: 2px solid #536678;
+    outline: 1px solid #ffffff;
+}
+
+.roll:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 25px rgb(255, 255, 255);
+    background: #C3C2A6;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
 }
 
 #result {
     margin-top: 40px;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    color: #ffcc00;
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
-    opacity: 0; /* start hidden */
-    transform: scale(0.5); /* start smaller */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* smooth transition */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
 }
 
 #result.show {
@@ -80,7 +90,7 @@ button:hover {
     height: 70px;
     padding: 0;
     border: 2px solid transparent;
-    border-radius: 12px;
+    border-radius: 2px;
     background-color: #555;
     display: flex;
     align-items: center;
@@ -115,18 +125,6 @@ button:hover {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-}
-
-footer {
-    margin-top: 50px;
-    font-size: 0.9rem;
-    color: #aaaaaa;
-    text-shadow: 0 0 3px #000;
-}
-
-footer .creator {
-    color: #ffcc00;
-    font-weight: bold;
 }
 
 #historyContainer {
@@ -171,5 +169,23 @@ footer .creator {
 
 #itemImage.show {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
+}
+
+#description {
+    font-size: 2rem;
+    color: #797979;
+    margin-bottom: 30px;
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 1rem;
+    color: #aaaaaa;
+    text-shadow: 0 0 3px #000;
+}
+
+footer .creator {
+    color: #ffcc00;
+    font-weight: bold;
 }
