@@ -18,9 +18,12 @@ const categoryColors = {
 const historyList = document.getElementById("historyList");
 const maxHistory = 10;
 
-function preloadImages() {
-    for (const i in items) {
-        items[i].forEach(item => {
+function preloadAllImages() {
+    for (const category in items) {
+        const categoryItems = items[category];
+        if (!categoryItems || !categoryItems.length) continue;
+
+        categoryItems.forEach(item => {
             if (item.image) {
                 const img = new Image();
                 img.src = item.image;
@@ -29,7 +32,7 @@ function preloadImages() {
     }
 }
 
-window.addEventListener('load', preloadImages);
+window.addEventListener('load', preloadAllImages);
 
 function getRandomItem() {
     const category = document.getElementById('categorySelect').value;
