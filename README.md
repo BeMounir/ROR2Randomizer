@@ -1,6 +1,6 @@
 # Risk of Rain 2 Randomizer 🎲
 
-A fun and customizable Risk of Rain 2 (RoR2) Randomizer web app that lets you randomly generate Survivors, Items, Equipment, and more – with filter support for Survivors of the Void (SotV) and Seekers of the Storm (SotS) content.
+A fun and customizable Risk of Rain 2 (RoR2) Randomizer web app that lets you randomly generate Survivors, Items, Equipment, and more with filter support for Survivors of the Void (SotV) and Seekers of the Storm (SotS) content.
 
 ## Features
 
@@ -20,7 +20,7 @@ A fun and customizable Risk of Rain 2 (RoR2) Randomizer web app that lets you ra
 
 2. Select desired filters (SotV / SotS, categories).
 
-2. Click Randomize.
+2. Click Get Random Item.
 
 ## Adding New Items
 
