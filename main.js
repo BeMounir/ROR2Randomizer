@@ -15,6 +15,14 @@ const categoryColors = {
     equipmentElite: "#ff9900"
 };
 
+const favicons = [
+        "images/itemsWhite/Tougher_Times.webp",
+        "images/itemsWhite/Soldier's_Syringe.webp",
+        "images/itemsWhite/Lens-Maker's_Glasses.webp",
+        "images/itemsGreen/Ukulele.webp",
+        "images/itemsRed/57_Leaf_Clover.webp"
+    ];
+
 const historyList = document.getElementById("historyList");
 const maxHistory = 10;
 
@@ -131,3 +139,6 @@ document.querySelectorAll('.toggle-btn').forEach(btn => {
         btn.classList.toggle('selected');
     });
 });
+
+const randomFavicon = favicons[Math.floor(Math.random() * favicons.length)];
+document.getElementById("icon").href = randomFavicon;
