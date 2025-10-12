@@ -195,7 +195,7 @@ const items = {
         {name: "Forgive Me Please", sotv: false, sots: false, image: "images/itemsEquipment/Forgive_Me_Please.webp"},
         {name: "Fuel Array", sotv: false, sots: false, image: "images/itemsEquipment/Fuel_Array.webp"},
         {name: "Gnarled Woodsprite", sotv: false, sots: false, image: "images/itemsEquipment/Gnarled_Woodsprite.webp"},
-        {name: "Goobo Jr.", sotv: true, sots: false, image: "images/itemsEquipment/Goobo_Jr.webp"},
+        {name: "Goobo Jr.", sotv: true, sots: false, image: "images/itemsEquipment/Goobo_Jr..webp"},
         {name: "Gorag's Opus", sotv: false, sots: false, image: "images/itemsEquipment/Gorag's_Opus.webp"},
         {name: "Jade Elephant", sotv: false, sots: false, image: "images/itemsEquipment/Jade_Elephant.webp"},
         {name: "Milky Chrysalis", sotv: false, sots: false, image: "images/itemsEquipment/Milky_Chrysalis.webp"},
@@ -261,16 +261,16 @@ const categoryColors = {
     survivors: "#8fa5d0",
     artifacts: "#E7C7E6",
     white: "#cccccc",
-    green: "#00ff00",
-    red: "#ff0000",
-    yellow: "#ffff00",
-    lunar: "#00ffff",
+    green: "#79C444",
+    red: "#F25D50",
+    yellow: "#D4E123",
+    lunar: "#44E0F9",
     voidWhite: "#ff99ff",
     voidGreen: "#ff99ff",
     voidRed: "#ff99ff",
     voidYellow: "#ff99ff",
     equipment: "#ff9900",
-    equipmentLunar: "#00ffff",
+    equipmentLunar: "#44E0F9",
     equipmentElite: "#ff9900"
 };
 
@@ -307,26 +307,43 @@ function getRandomItem() {
 
     const random = filtered[Math.floor(Math.random() * filtered.length)];
 
+    description.classList.remove("show");
     result.classList.remove("show");
     if (image.style.display !== "none") {
         image.classList.remove("show");
     }
 
     setTimeout(() => {
-        result.innerText = random.name;
+        let nameHTML = random.name;
+
+        if (random.sotv) {
+            nameHTML += ` <img src="images/icons/SotV_Icon.webp" class="tag-icon">`;
+        }
+
+        if (random.sots) {
+            nameHTML += ` <img src="images/icons/SotS_Icon.webp" class="tag-icon">`;
+        }
+
+        result.innerHTML = nameHTML;
         description.innerText = random.description || "";
+        description.classList.add("show");
 
         const color = categoryColors[category] || "#ffcc00";
         result.style.color = color;
         result.style.textShadow = `0 0 1px ${color}, 0 0 2px ${color}`;
 
-        if (random.image) {
-            image.src = random.image;
+        const img = new Image();
+        img.onload = () => {
+            image.src = img.src;
             image.style.display = "block";
             void image.offsetWidth;
             image.classList.add("show");
+        };
+
+        if (random.image) {
+            img.src = random.image;
         } else {
-            image.style.display = "none";
+            img.src = "";
         }
 
         result.classList.add("show");
