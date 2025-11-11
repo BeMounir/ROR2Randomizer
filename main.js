@@ -15,6 +15,16 @@ const categoryColors = {
     equipmentElite: "#ff9900"
 };
 
+const descriptionColours = {
+    yellow: "#E5C962",
+    blue: "#95CDE5",
+    green: "#9CE562",
+    gray: "#909090",
+    red: "#E58262",
+    purple: "#C678B4",
+    yellowItems: "#FFFF00"
+};
+
 const historyList = document.getElementById("historyList");
 const maxHistory = 10;
 
@@ -83,7 +93,22 @@ function getRandomItem() {
         }
 
         result.innerHTML = nameHTML;
-        description.innerText = random.description || "";
+        let descHTML = random.description || "";
+
+        descHTML = descHTML.replace(
+            /\[([a-zA-Z]+):([^\]]+)\]/g,
+            (match, colorKey, text) => {
+                const color = descriptionColours[colorKey] || "#ffffff";
+                if (descriptionColours[colorKey] == "#909090") {
+                    return `<span style="color: ${color};font-style: italic;">${text}</span>`;
+                } else {
+                    return `<span style="color: ${color}">${text}</span>`;
+
+                }
+            }
+        );
+
+        description.innerHTML = descHTML;
         description.classList.add("show");
 
         const color = categoryColors[category] || "#ffcc00";
