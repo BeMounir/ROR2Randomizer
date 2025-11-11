@@ -26,6 +26,6 @@ A fun and customizable Risk of Rain 2 (RoR2) Randomizer web app that lets you ra
 
 To add a new item:
 
-{ name: "New Item", sotv: false, sots: false, image: "itemsGreen/New_Item.webp" }
+{ name: "New Item", description: "Item Description", sotv: false, sots: false, image: "itemsGreen/New_Item.webp" }
 
 Add this to the item dictionary, set the correct sotv and sots values depending on whether it appears in Survivors of the Void or Seekers of the Storm, and include the appropriate image path.
