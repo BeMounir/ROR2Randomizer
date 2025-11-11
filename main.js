@@ -166,4 +166,4 @@ document.querySelectorAll('.toggle-btn').forEach(btn => {
 });
 
 const randomFavicon = favicons[Math.floor(Math.random() * favicons.length)];
-document.getElementById("icon").href = randomFavicon;
+document.getElementById("favicon").href = randomFavicon;
